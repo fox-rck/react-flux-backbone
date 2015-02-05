@@ -18,13 +18,15 @@ module.exports = React.createClass({
 
     onSubmit: function(ev) {
         ev.preventDefault();
+        this.refs.input.getDOMNode().blur();
         this.props.onSubmit(this.state.value);
+        this.setState({ value: "" });
     },
 
     render: function() {
-        return <form className="form-group" onSubmit={this.onSubmit}>
-            <input {...this.props} ref="input" type="text"
-                value={this.state.value} onChange={this.onChange} required />
+        return <form onSubmit={this.onSubmit}>
+            <input {...this.props} type="text" ref="input" 
+                value={this.state.value} onChange={this.onChange} />
         </form>
     }
 });

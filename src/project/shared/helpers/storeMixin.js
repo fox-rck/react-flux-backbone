@@ -5,17 +5,30 @@
  * @param {String} [events="add remove reset change"]
  */
 module.exports = function(store, events) {
-	if(!events) {
-		events = "add remove reset change";
-	}
-    return {
+	// if(!events) {
+	// 	events = "all";
+	// }
+ //    return {
+ //        componentDidMount: function() {
+ //            store.on(events, function() {
+ //                this.forceUpdate();
+ //            }, this);
+ //        },
+ //        componentWillUnmount: function() {
+ //            store.off(null, null, this);
+ //        }
+ //    };
+    return{
         componentDidMount: function() {
-            store.on(events, function() {
-                this.forceUpdate();
-            }, this);
+            console.log(store)
+            store.addChangeListener(this._onChange);
+            this.getInitDataIfNeeded(this.props);
         },
         componentWillUnmount: function() {
-            store.off(null, null, this);
+            store.removeChangeListener(this._onChange);
+        },
+        componentWillReceiveProps: function(nextProps) {
+          //  this.getInitDataIfNeeded(nextProps);
         }
-    };
+    }
 };

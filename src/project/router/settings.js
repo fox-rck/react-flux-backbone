@@ -4,10 +4,15 @@ module.exports = {
      * @example "url/:id": "name"
      */
     ROUTE_ROUTES: {
-        "todos": 'todos',
-        "flickr": 'flickr',
-        "flickr/:query": 'flickr',
-        "help": 'help'
+        //"todos": 'todos',
+        // "flickr": 'flickr',
+        // "flickr/:query": 'flickr',
+        "help": 'help',
+        // "topic": 'todos',
+        "topic/:id": 'topic',
+        "todos/:id": 'todos',
+        "users/:id": 'users'
+
     },
 
     // default route when undefined

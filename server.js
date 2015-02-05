@@ -10,24 +10,19 @@ var app = express();
 
 app.use(compression());
 app.use(serveStatic('./build'));
+app.use(serveStatic('./public'));
 app.use(serveIndex('./build'));
 app.use(responseTime());
 
-/*
 
-require('node-jsx').install();
-var App = require('./project/app/components/App.js');
-var indexHtml = fs.readFileSync(__dirname + '/index.html', 'utf8');
-
-app.get('/', function(req, res) {
-    var rendered = React.renderComponentToString(App());
-    res.send(indexHtml.replace("{{APP}}", rendered));
-});
-*/
-
-var server = app.listen(3000, function () {
+var server = app.listen(process.env.PORT || 3000, function () {
   var host = server.address().address;
   var port = server.address().port;
 
   console.log('Example app listening at http://%s:%s', host, port);
+});
+
+app.get('/authenticate', function(req, res){
+	console.log(req)
+ // res.send('hello world');
 });

@@ -4,23 +4,33 @@ var RouterStore = require('../RouterStore');
 
 
 module.exports = React.createClass({
-    mixins: [storeMixin(RouterStore)],
+    mixins: [RouterStore],
 
     getInitialState: function() {
         return { RouterStore: RouterStore };
     },
-
+    componentDidMount: function() {
+        RouterStore.on('all', function() {
+            this.forceUpdate();
+        }, this);
+    },
+    componentWillUnmount: function() {
+        RouterStore.off(null, null, this);
+    },
     getComponentClass: function(route) {
         switch (route) {
             case 'help':
                 return require('project/app/components/Help');
-
-            case 'flickr':
-                return require('project/flickr/components/Flickr');
-
+            case 'users':
+                return require('project/profile/Profile');
+            case 'topic':
+                return require('project/blerps/components/Todos');
             case 'todos':
+                return require('project/todos/Todos');
+            case 'favorites':
+                return false;
             default:
-                return require('project/todos/components/Todos');
+                return require('project/app/components/Home');
         }
     },
 

@@ -9,10 +9,7 @@ module.exports = React.createClass({
 
     render: function() {
         return <div>
-            <hr />
-            <small>
-                <a href="#" onClick={this.toTop}>Top</a>
-            </small>
+           
         </div>
     }
 });

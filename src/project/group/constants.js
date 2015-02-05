@@ -1,0 +1,6 @@
+module.exports = {
+	GROUP_ADD: 'GROUP_ADD',
+    GROUPS_REMOVE: 'GROUP_REMOVE',
+    GROUPS_GET: 'GROUPS_GET',
+    GROUP_UPDATE: 'GROUP_UPDATE'
+};

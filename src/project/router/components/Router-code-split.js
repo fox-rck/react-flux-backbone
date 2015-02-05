@@ -11,7 +11,6 @@ var RouterStore = require('../RouterStore');
 
 module.exports = React.createClass({
     mixins: [storeMixin(RouterStore)],
-
     getInitialState: function() {
         return {
             RouterStore: RouterStore,
@@ -21,7 +20,6 @@ module.exports = React.createClass({
             }
         };
     },
-
     ensureBodyComponent: function(route, component) {
         process.nextTick(function() {
             this.setState({
@@ -30,28 +28,48 @@ module.exports = React.createClass({
             });
         }.bind(this));
     },
-
     getBodyComponent: function() {
         var route = this.state.RouterStore.get('route');
 
         if (this.state.route != route) {
             switch (route) {
+                case 'home':
+                    require.ensure([], function() {
+                        this.ensureBodyComponent(route, require('project/app/components/Home'));
+                    }.bind(this));
+                    break;
                 case 'help':
                     require.ensure([], function() {
                         this.ensureBodyComponent(route, require('project/app/components/Help'));
                     }.bind(this));
                     break;
-
-                case 'flickr':
+                case 'users':
                     require.ensure([], function() {
-                        this.ensureBodyComponent(route, require('project/flickr/components/Flickr'));
+                        this.ensureBodyComponent(route, require('project/profile/Profile'));
+                    }.bind(this));
+                    break;
+                case 'socket':
+                    require.ensure([], function() {
+                        this.ensureBodyComponent(route, require('project/app/components/Socket'));
+                    }.bind(this));
+                break;
+                case 'topic':
+                    require.ensure([], function() {
+                        this.ensureBodyComponent(route, require('project/blerps/components/Todos'));
                     }.bind(this));
                     break;
 
+                case 'favorites':
+                    //Leave empty so page does not transition.. 
+                break;
                 case 'todos':
+                 require.ensure([], function() {
+                        this.ensureBodyComponent(route, require('project/todos/Todos'));
+                    }.bind(this));
+                    break;
                 default:
                     require.ensure([], function() {
-                        this.ensureBodyComponent(route, require('project/todos/components/Todos'));
+                        this.ensureBodyComponent(route, require('project/blerps/components/Todos'));
                     }.bind(this));
                     break;
             }

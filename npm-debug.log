@@ -1,0 +1,106 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '--save', 'awaut' ]
+2 info using npm@2.0.2
+3 info using node@v0.10.31
+4 verbose node symlink /usr/local/bin/node
+5 warn package.json BlerpItSocket@0.0.0 No repository field.
+6 warn package.json events@1.0.2 events is also the name of a node core module.
+7 warn package.json http@0.0.0 http is also the name of a node core module.
+8 warn package.json http@0.0.0 No description
+9 warn package.json http@0.0.0 No repository field.
+10 warn package.json http@0.0.0 No README data
+11 warn package.json path@0.4.9 path is also the name of a node core module.
+12 warn package.json path@0.4.9 No README data
+13 warn package.json mongo@0.1.0 No repository field.
+14 warn package.json mongo@0.1.0 No README data
+15 verbose readDependencies using package.json deps
+16 verbose cache add [ 'awaut', null ]
+17 verbose cache add spec="awaut" args=["awaut",null]
+18 verbose parsed spec { raw: 'awaut',
+18 verbose parsed spec   scope: null,
+18 verbose parsed spec   name: 'awaut',
+18 verbose parsed spec   rawSpec: '',
+18 verbose parsed spec   spec: '*',
+18 verbose parsed spec   type: 'range' }
+19 verbose parsed spec { raw: 'awaut',
+19 verbose parsed spec   scope: null,
+19 verbose parsed spec   name: 'awaut',
+19 verbose parsed spec   rawSpec: '',
+19 verbose parsed spec   spec: '*',
+19 verbose parsed spec   type: 'range' }
+20 verbose addNamed [ 'awaut', '*' ]
+21 verbose addNamed [ null, '*' ]
+22 silly lockFile 3b9b5544-awaut awaut@*
+23 verbose lock awaut@* /Users/rfox2/.npm/3b9b5544-awaut.lock
+24 silly addNameRange { name: 'awaut', range: '*', hasData: false }
+25 verbose mapToRegistry name awaut
+26 verbose mapToRegistry uri https://registry.npmjs.org/awaut
+27 verbose request on initialization, where is /awaut
+28 verbose request after pass 1, where is /awaut
+29 verbose request url raw /awaut
+30 verbose request resolving registry [ 'https://registry.npmjs.org/', './awaut' ]
+31 verbose request after pass 2, where is https://registry.npmjs.org/awaut
+32 verbose request no auth needed
+33 info attempt registry request try #1 at 20:16:22
+34 verbose request id a67db4f77b690ac1
+35 http request GET https://registry.npmjs.org/awaut
+36 http 404 https://registry.npmjs.org/awaut
+37 verbose headers { date: 'Mon, 02 Feb 2015 02:11:06 GMT',
+37 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+37 verbose headers   'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=0',
+37 verbose headers   'content-length': '52',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   age: '0',
+37 verbose headers   'x-served-by': 'cache-dfw1827-DFW',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1422843065.857662,VS0,VE255',
+37 verbose headers   'keep-alive': 'timeout=10, max=50',
+37 verbose headers   connection: 'Keep-Alive' }
+38 silly registry.get cb [ 404,
+38 silly registry.get   { date: 'Mon, 02 Feb 2015 02:11:06 GMT',
+38 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+38 silly registry.get     'content-type': 'application/json',
+38 silly registry.get     'cache-control': 'max-age=0',
+38 silly registry.get     'content-length': '52',
+38 silly registry.get     'accept-ranges': 'bytes',
+38 silly registry.get     via: '1.1 varnish',
+38 silly registry.get     age: '0',
+38 silly registry.get     'x-served-by': 'cache-dfw1827-DFW',
+38 silly registry.get     'x-cache': 'MISS',
+38 silly registry.get     'x-cache-hits': '0',
+38 silly registry.get     'x-timer': 'S1422843065.857662,VS0,VE255',
+38 silly registry.get     'keep-alive': 'timeout=10, max=50',
+38 silly registry.get     connection: 'Keep-Alive' } ]
+39 silly lockFile 3b9b5544-awaut awaut@*
+40 silly lockFile 3b9b5544-awaut awaut@*
+41 verbose stack Error: 404 Not Found: awaut
+41 verbose stack     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:258:14)
+41 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:197:65)
+41 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:237:22)
+41 verbose stack     at Request.emit (events.js:98:17)
+41 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1146:14)
+41 verbose stack     at Request.emit (events.js:117:20)
+41 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1097:12)
+41 verbose stack     at IncomingMessage.emit (events.js:117:20)
+41 verbose stack     at _stream_readable.js:943:16
+41 verbose stack     at process._tickCallback (node.js:419:13)
+42 verbose statusCode 404
+43 verbose pkgid awaut
+44 verbose cwd /Users/rfox2/Documents/websites/private/NodeJs_TRW/BlerpItSocket
+45 error Darwin 12.5.0
+46 error argv "node" "/usr/local/bin/npm" "install" "--save" "awaut"
+47 error node v0.10.31
+48 error npm  v2.0.2
+49 error code E404
+50 error 404 Not Found: awaut
+50 error 404
+50 error 404 'awaut' is not in the npm registry.
+50 error 404 You should bug the author to publish it (or use the name yourself!)
+50 error 404 It was specified as a dependency of 'BlerpItSocket'
+50 error 404
+50 error 404 Note that you can also install from a
+50 error 404 tarball, folder, http url, or git url.
+51 verbose exit [ 1, true ]
